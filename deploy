@@ -58,5 +58,6 @@ check_default_shell
 # .zshrc
 printf "source '$DIR/zsh/zshrcd.zsh'" > ~/.zshrc
 # .gitconfig
+git config --global include.path $DIR/git/gitconfig
 
 echo "Please log out and log back in for default shell to be initialized."

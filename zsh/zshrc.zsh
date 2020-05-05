@@ -38,5 +38,7 @@ source $DOTFILES_HOME/zsh/completion.zsh
 source $DOTFILES_HOME/zsh/config.zsh
 source $DOTFILES_HOME/zsh/prompt.zsh
 
+# setup highlighting and fast-theme
 source $DOTFILES_HOME/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+fast-theme clean &> /dev/null #TODO: check, if theme is already set
 export PATH=$PATH:$DOTFILES_HOME/util
