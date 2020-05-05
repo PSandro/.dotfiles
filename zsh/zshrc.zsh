@@ -22,14 +22,6 @@
 
 autoload -U compinit
 
-plugins=(
-	docker
-)
-
-for plugin ($plugins); do
-    fpath=($DOTFILES_HOME/zsh/plugins/$plugin $fpath)
-done
-
 compinit
 
 source $DOTFILES_HOME/zsh/aliases.zsh
