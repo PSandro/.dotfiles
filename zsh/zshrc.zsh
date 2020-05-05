@@ -38,10 +38,11 @@ compinit
 #source ~/.dotfiles/zsh/plugins/oh-my-zsh/lib/completion.zsh
 #source ~/.dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-source ~/.dotfiles/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+source ~/.dotfiles/zsh/aliases.zsh
 source ~/.dotfiles/zsh/window.zsh
 source ~/.dotfiles/zsh/completion.zsh
 source ~/.dotfiles/zsh/config.zsh
-
 source ~/.dotfiles/zsh/prompt.zsh
+
+source ~/.dotfiles/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 export PATH=$PATH:$HOME/.dotfiles/util
