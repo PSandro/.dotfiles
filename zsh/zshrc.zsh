@@ -41,4 +41,6 @@ source $DOTFILES_HOME/zsh/prompt.zsh
 # setup highlighting and fast-theme
 source $DOTFILES_HOME/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 fast-theme clean &> /dev/null #TODO: check, if theme is already set
+
+source $DOTFILES_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 export PATH=$PATH:$DOTFILES_HOME/util
