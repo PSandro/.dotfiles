@@ -79,7 +79,7 @@ echo
 
 check_default_shell
 
-printf "source '$HOME/.dotfiles/zsh/zshrcd.sh'" > ~/.zshrc
+printf "source '$HOME/.dotfiles/zsh/zshrcd.zsh'" > ~/.zshrc
 
 echo
 echo "Please log out and log back in for default shell to be initialized."
