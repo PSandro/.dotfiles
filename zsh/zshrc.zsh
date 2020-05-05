@@ -8,7 +8,6 @@
 
 # Settings
 
-alias reload != '. ~/.zshrc'
 #Functions
 
 # Custom cd
@@ -28,21 +27,16 @@ plugins=(
 )
 
 for plugin ($plugins); do
-    fpath=(~/.dotfiles/zsh/plugins/$plugin $fpath)
+    fpath=($DOTFILES_HOME/zsh/plugins/$plugin $fpath)
 done
 
 compinit
 
-#source ~/.dotfiles/zsh/plugins/oh-my-zsh/lib/history.zsh
-#source ~/.dotfiles/zsh/plugins/oh-my-zsh/lib/key-bindings.zsh
-#source ~/.dotfiles/zsh/plugins/oh-my-zsh/lib/completion.zsh
-#source ~/.dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $DOTFILES_HOME/zsh/aliases.zsh
+source $DOTFILES_HOME/zsh/window.zsh
+source $DOTFILES_HOME/zsh/completion.zsh
+source $DOTFILES_HOME/zsh/config.zsh
+source $DOTFILES_HOME/zsh/prompt.zsh
 
-source ~/.dotfiles/zsh/aliases.zsh
-source ~/.dotfiles/zsh/window.zsh
-source ~/.dotfiles/zsh/completion.zsh
-source ~/.dotfiles/zsh/config.zsh
-source ~/.dotfiles/zsh/prompt.zsh
-
-source ~/.dotfiles/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
-export PATH=$PATH:$HOME/.dotfiles/util
+source $DOTFILES_HOME/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+export PATH=$PATH:$DOTFILES_HOME/util
