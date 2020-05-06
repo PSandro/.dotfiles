@@ -49,7 +49,7 @@ check_default_shell() {
 git submodule update --init --recursive
 check_for_software zsh
 echo
-check_for_software vim
+check_for_software neovim
 echo
 #check_for_software tmux
 #echo
