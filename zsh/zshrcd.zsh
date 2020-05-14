@@ -1,4 +1,4 @@
-export DOTFILES_HOME="$(pwd)/.dotfiles" #TODO: make dynamic dir name accessable
+export DOTFILES_HOME="$HOME/.dotfiles" #TODO: make dynamic dir name accessable
 
 function dotfiles-update() {
   echo "Checking for updates."
