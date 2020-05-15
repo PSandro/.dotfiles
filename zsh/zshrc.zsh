@@ -36,3 +36,4 @@ fast-theme clean &> /dev/null #TODO: check, if theme is already set
 
 source $DOTFILES_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 export PATH=$PATH:$DOTFILES_HOME/util
+export PATH=$PATH:$HOME/.local/bin
