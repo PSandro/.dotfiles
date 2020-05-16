@@ -1,64 +1,57 @@
 #!/usr/bin/env bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-
 prompt_install() {
-	echo -n "$1 is not installed. Would you like to install it? (y/n) " >&2
-	old_stty_cfg=$(stty -g)
-	stty raw -echo
-	answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
-	stty $old_stty_cfg && echo
-	if echo "$answer" | grep -iq "^y" ;then
-		if [ -x "$(command -v apt-get)" ]; then
-			sudo apt-get install $1 -y
+    read -p "$1 is not installed. Install it? (y/n)" -n 1 -r
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        if [ -x "$(command -v apt-get)" ]; then
+            sudo apt-get install $1 -y
 
-		elif [ -x "$(command -v pacman)" ]; then
-			sudo pacman -S $1
+        elif [ -x "$(command -v pacman)" ]; then
+            sudo pacman -S $1
 
-		else
-			echo "I'm not sure what your package manager is! Please install $1 on your own and run this deploy script again."
-		fi
-	fi
+        else
+            echo "I'm not sure what your package manager is! Please install $1 manually and run this deploy script again."
+        fi
+    fi
 }
 
 check_for_software() {
-	echo "Checking to see if $1 is installed"
-	if ! [ -x "$(command -v $1)" ]; then
-		prompt_install $1
-	else
-		echo "$1 is installed."
-	fi
+    COMMAND=$1
+    [[ -z "$2" ]] && PACKAGE=$1 || PACKAGE=$2
+
+    if ! [ -x "$(command -v $COMMAND)" ]; then
+        prompt_install $PACKAGE
+    else
+        echo "$COMMAND (package: $PACKAGE) is installed."
+    fi
 }
 
 check_default_shell() {
-	if [ -z "${SHELL##*zsh*}" ] ;then
-			echo "Default shell is zsh."
-	else
-		echo -n "Default shell is not zsh. Do you want to chsh -s \$(which zsh)? (y/n)"
-		old_stty_cfg=$(stty -g)
-		stty raw -echo
-		answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
-		stty $old_stty_cfg && echo
-		if echo "$answer" | grep -iq "^y" ;then
-			chsh -s $(which zsh)
-		else
-			echo "Warning: Your configuration won't work properly. If you exec zsh, it'll exec tmux which will exec your default shell which isn't zsh."
-		fi
-	fi
+    if [ -z "${SHELL##*zsh*}" ]; then
+        echo "Default shell is zsh ($SHELL)."
+    else
+				read -p "Default shell is not zsh. Do you want to chsh -s \$(which zsh)? (y/n)" -n 1 -r
+		    if [[ $REPLY =~ ^[Yy]$ ]]; then
+            chsh -s $(which zsh)
+        fi
+    fi
 }
 
+# update modules (mainly zsh plugins)
 git submodule update --init --recursive
+
+# install software
 check_for_software zsh
-echo
-check_for_software neovim
-echo
-#check_for_software tmux
-#echo
+check_for_software nvim neovim
+check_for_software tmux
 
 check_default_shell
 # .zshrc
 printf "source '$DIR/zsh/zshrcd.zsh'" > ~/.zshrc
+
 # .gitconfig
 git config --global include.path $DIR/git/gitconfig
+
 # neovim config
 mkdir -p ~/.config/nvim
 printf "source $DIR/nvim/init.vim" > ~/.config/nvim/init.vim
