@@ -19,3 +19,7 @@ export KEYTIMEOUT=1
 #bindkey -M menuselect 'ö' vi-forward-char
 #bindkey -M menuselect 'k' vi-down-line-or-history
 #bindkey -v '^?' backward-delete-char
+
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
+
