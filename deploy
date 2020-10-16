@@ -37,8 +37,8 @@ check_default_shell() {
     fi
 }
 
-# update modules (mainly zsh plugins)
-git submodule update --init --recursive
+# check/install zsh plugins
+bash $DIR/zsh/plugins.sh
 
 # install software
 check_for_software zsh
