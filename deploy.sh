@@ -9,7 +9,10 @@ prompt_install() {
         elif [ -x "$(command -v pacman)" ]; then
             sudo pacman -S $1
 
-        else
+        elif [ -x "$(command -v yum)" ]; then
+            sudo yum install $1
+
+       else
             echo "I'm not sure what your package manager is! Please install $1 manually and run this deploy script again."
         fi
     fi
