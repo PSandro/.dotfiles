@@ -11,6 +11,7 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
 Plug 'godlygeek/tabular'
+Plug 'davidhalter/jedi-vim'
 Plug 'plasticboy/vim-markdown'
 call plug#end()
 
