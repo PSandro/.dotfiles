@@ -1,0 +1,10 @@
+jedi for code completion (python):
+pip install jedi
+
+
+flake 8 for code linting:
+pip install flake8
+
+autopep8 for code formatting
+
+pip install autopep8

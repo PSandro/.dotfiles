@@ -13,17 +13,51 @@ Plug 'ap/vim-css-color'
 Plug 'godlygeek/tabular'
 Plug 'davidhalter/jedi-vim'
 Plug 'plasticboy/vim-markdown'
+" UI related
+Plug 'kyoz/purify', { 'rtp': 'vim' }
+" Formater
+Plug 'Chiel92/vim-autoformat'
+
+" syntax check
+Plug 'w0rp/ale'
 call plug#end()
 
 set clipboard+=unnamedplus
 
 " Some basics:
-	set nocompatible
-	filetype plugin on
-	syntax on
-	set encoding=utf-8
-	set number relativenumber
-	let g:vim_markdown_folding_disabled = 1 " Disable folding for markdown
+set nocompatible
+filetype plugin on
+syntax on
+set encoding=utf-8
+set number relativenumber
+let g:vim_markdown_folding_disabled = 1 " Disable folding for markdown
+set ignorecase
 
 " Save file as sudo on files that require root permission
-	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+colorscheme purify
+syntax on
+
+" vim-autoformat
+noremap <F3> :Autoformat<CR>
+
+let g:airline_theme='purify'
+
+" Ale
+" let g:ale_lint_on_enter = 0
+" let g:ale_lint_on_text_changed = 'never'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_linters = {'python': ['flake8']}
+
+
+" split settings
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set splitbelow
+set splitright
