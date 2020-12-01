@@ -5,6 +5,7 @@ export CLICOLOR=true
 alias ls="ls -hN --color=auto --group-directories-first"
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
+alias ip="ip -c"
 
 # Set FSH THEME_NAME
 #export FAST_THEME_NAME="clean"
