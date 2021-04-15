@@ -25,6 +25,10 @@ call plug#end()
 set clipboard+=unnamedplus
 
 " Some basics:
+set expandtab
+set tabstop=4
+set shiftwidth=2
+
 set nocompatible
 filetype plugin on
 syntax on
@@ -41,6 +45,9 @@ syntax on
 
 " vim-autoformat
 noremap <F3> :Autoformat<CR>
+let g:formatters_js = ['eslint']
+let g:autoformat_retab=0
+let g:autoformat_verbosemode=1
 
 let g:airline_theme='purify'
 
