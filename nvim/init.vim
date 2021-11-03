@@ -47,7 +47,6 @@ syntax on
 noremap <F3> :Autoformat<CR>
 let g:formatters_js = ['eslint']
 let g:autoformat_retab=0
-let g:autoformat_verbosemode=1
 
 let g:airline_theme='purify'
 

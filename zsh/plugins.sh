@@ -1,7 +1,7 @@
 #!/bin/bash
 repos=(
 "https://github.com/zsh-users/zsh-autosuggestions.git"
-"https://github.com/zdharma/fast-syntax-highlighting.git"
+"https://github.com/zdharma-continuum/fast-syntax-highlighting.git"
 )
 
 function check {
@@ -11,7 +11,7 @@ function check {
 	echo "checking $pluginDir..."
 	if [ -d "$pluginDir" ]; then
 		cd "$pluginDir"
-		git pull
+        git fetch --all
 	else
 		mkdir -p "$pluginDir"
 		cd "$pluginDir"

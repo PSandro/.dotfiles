@@ -2,10 +2,11 @@ export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
 # Colorize when possible
-alias ls="ls -hN --color=auto --group-directories-first"
+alias ls="exa"
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
 alias ip="ip -c"
+alias cat="bat"
 
 # Set FSH THEME_NAME
 #export FAST_THEME_NAME="clean"

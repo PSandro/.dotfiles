@@ -8,7 +8,6 @@ autoload -U compinit
 
 compinit
 
-source $DOTFILES_HOME/zsh/aliases.zsh
 source $DOTFILES_HOME/zsh/window.zsh
 source $DOTFILES_HOME/zsh/completion.zsh
 source $DOTFILES_HOME/zsh/config.zsh
