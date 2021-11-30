@@ -74,6 +74,9 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+# focus window on activation
+focus_on_window_activation urgent
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -141,7 +144,7 @@ assign [class="jetbrains-*"] $ws5
 assign [class="sasm"] $ws5
 assign [class="zoom"] $ws8
 #assign does not work because Spotify takes its class after opening
-#for_window [class="Spotify"] move to workspace $ws9
+for_window [class="Spotify"] move to workspace $ws9
 assign [class="Spotify"] $ws9
 assign [class="discord"] $ws10
 assign [class="Zulip"] $ws10
