@@ -247,5 +247,5 @@ bindsym $mod+Shift+x mode "$mode_system"
 bindsym Print exec flameshot gui
 
 exec_always --no-startup-id nitrogen --restore &
-exec_always --no-startup-id picom --experimental-backends --config ~/.dotfiles/picom/picom.yml
+exec_always --no-startup-id picom --config ~/.dotfiles/picom/picom.yml
 exec_always --no-startup-id ~/.dotfiles/polybar/launch.sh
