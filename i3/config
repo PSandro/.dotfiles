@@ -9,8 +9,8 @@
 font pango:FiraCode weight=500 10
 title_align left
 
-gaps inner 10
-gaps outer 10
+gaps inner 5
+gaps outer 5
 
 set $mod Mod4
 set $term alacritty
@@ -158,7 +158,7 @@ force_display_urgency_hint 1000 ms
 
 
 bindsym $mod+Shift+d gaps inner current set 0; gaps outer current set 0
-bindsym $mod+Shift+t gaps inner current set 10; gaps outer current set 10
+bindsym $mod+Shift+t gaps inner current set 5; gaps outer current set 5
 #bindsym $mod+d exec --no-startup-id dmenu_run -fn "Fira Code:pixelsize=15" -nb "$inactive-bg-color" -sb "$accent-color" -sf "#2E3440"
 bindsym $mod+d exec --no-startup-id rofi -theme ~/.dotfiles/rofi/nord -show run
 bindsym $mod+w exec --no-startup-id $browser &

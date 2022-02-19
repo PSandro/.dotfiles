@@ -32,7 +32,7 @@ shadow-offset-y = -7;
 # Don't draw shadows on drag-and-drop windows. This option is deprecated, 
 # you should use the *wintypes* option in your config file instead.
 #
-no-dnd-shadow = false
+#no-dnd-shadow = false
 
 # Red color value of shadow (0.0 - 1.0, defaults to 0).
 # shadow-red = 0
