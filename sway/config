@@ -221,6 +221,24 @@ bindsym Print exec grim -g "$(slurp)" - | wl-copy
 seat * hide_cursor 8000
 
 #
+# Styling
+#
+
+set $accent-color        #00FF79
+set $bg-color            #434c5e
+set $inactive-bg-color   #3b4252
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #FF0000
+
+# window colors
+#                       border                  background              text                    indicator
+client.focused          $accent-color           $accent-color           $bg-color               #8fbcbb
+client.unfocused        $inactive-bg-color      $inactive-bg-color      $inactive-text-color    #8fbcbb
+client.focused_inactive $inactive-bg-color      $inactive-bg-color      $inactive-text-color    #8fbcbb
+client.urgent           $urgent-bg-color        $urgent-bg-color        $text-color             #8fbcbb
+
+#
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
