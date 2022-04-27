@@ -68,4 +68,13 @@ ensure_line_in_file ~/.config/nvim/init.vim "source $DIR/nvim/init.vim"
 mkdir -p ~/.config/sway
 ensure_line_in_file ~/.config/sway/config "include $DIR/sway/config"
 
+# waybar config
+mkdir -p ~/.config/waybar
+if [[ ! -f ~/.config/waybar/config ]];then
+ln -s "$DIR/waybar/config" ~/.config/waybar/config
+fi
+if [[ ! -f ~/.config/waybar/style.css ]];then
+ln -s "$DIR/waybar/style.css" ~/.config/waybar/style.css
+fi
+
 echo "Please log out and log back in for default shell to be initialized."
