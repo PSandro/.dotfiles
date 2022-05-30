@@ -17,7 +17,7 @@ set $term alacritty
 set $browser firefox
 
 # set keyboard layout to german
-exec "setxkbmap -layout de"
+exec "setxkbmap -layout us -variant de_se_fi"
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
