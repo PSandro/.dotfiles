@@ -22,8 +22,8 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 # Keyboard layout
 input "type:keyboard" {
-    xkb_layout de
-    xkb_variant nodeadkeys
+    xkb_layout us
+    xkb_variant de_se_fi
 }
 
 ### Output configuration
@@ -47,12 +47,12 @@ bindsym $mod+Shift+F2 move workspace to output right
 #
 # Example configuration:
 #
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
+   input "2:14:ETPS/2_Elantech_Touchpad" {
+       dwt enabled
+       tap enabled
+       natural_scroll enabled
+       middle_emulation enabled
+   }
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -173,7 +173,7 @@ bindsym $mod+Shift+F2 move workspace to output right
 #
 # Resizing containers:
 #
-bindsym $mod+Shift+z resize grow width 10 px or 10 ppt
+bindsym $mod+Shift+y resize grow width 10 px or 10 ppt
 bindsym $mod+Shift+u resize shrink height 10 px or 10 ppt
 bindsym $mod+Shift+i resize grow height 10 px or 10 ppt
 bindsym $mod+Shift+o resize shrink width 10 px or 10 ppt
