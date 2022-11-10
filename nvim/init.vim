@@ -56,7 +56,8 @@ let g:airline_theme='purify'
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_linters = {'python': ['flake8']}
+let g:ale_linters = {'python': ['flake8', 'pylint']}
+let g:python3_host_prog = '/usr/bin/python3'
 
 
 " split settings
