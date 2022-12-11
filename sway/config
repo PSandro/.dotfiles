@@ -30,6 +30,9 @@ input "type:keyboard" {
 bindsym $mod+Shift+F1 move workspace to output left
 bindsym $mod+Shift+F2 move workspace to output right
 
+#wayland mirror
+bindsym $mod+p exec wl-mirror -r '0,41 1920x1080 eDP-1'
+
 ### Idle configuration
 #
 # Example configuration:
