@@ -130,20 +130,6 @@ workspace $ws10 output $mright
 bindsym $mod+Shift+F2 move workspace to output right
 bindsym $mod+Shift+F1 move workspace to output left
 
-# automatically putting clients on specific workspaces
-assign [class="Thunderbird"] $ws3
-assign [class="Xournalpp"] $ws4
-assign [class="Evince"] $ws4
-assign [class="jetbrains-*"] $ws5
-assign [class="sasm"] $ws5
-assign [class="zoom"] $ws8
-#assign does not work because Spotify takes its class after opening
-for_window [class="Spotify"] move to workspace $ws9
-assign [class="Spotify"] $ws9
-assign [class="discord"] $ws10
-assign [class="Zulip"] $ws10
-assign [class="TeamSpeak 3"] $ws10
-
 workspace_auto_back_and_forth yes
 
 
