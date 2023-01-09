@@ -62,11 +62,15 @@ git config --global include.path "$DIR"/git/gitconfig
 
 # neovim config
 mkdir -p ~/.config/nvim
-ensure_line_in_file ~/.config/nvim/init.vim "source $DIR/nvim/init.vim"
+#TODO: init.lua
 
 # sway config
 mkdir -p ~/.config/sway
 ensure_line_in_file ~/.config/sway/config "include $DIR/sway/config"
+
+# i3 config
+mkdir -p ~/.config/i3
+ensure_line_in_file ~/.config/i3/config "include $DIR/i3/config"
 
 # waybar config
 mkdir -p ~/.config/waybar
