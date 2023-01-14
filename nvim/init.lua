@@ -24,6 +24,12 @@ require('packer').startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    }
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   if packer_bootstrap then
@@ -31,6 +37,8 @@ require('packer').startup(function(use)
   end
 end)
 
+-- nvim tree
+require("nvim-tree").setup()
 
 -- options config
 local set = vim.opt
