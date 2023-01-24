@@ -26,6 +26,9 @@ input "type:keyboard" {
     xkb_variant de_se_fi
 }
 
+# only allow graphic tablet on laptop screen
+input 10429:63491:XP-Pen_Deco_02 map_to_output eDP-1 
+
 ### Output configuration
 bindsym $mod+Shift+F1 move workspace to output left
 bindsym $mod+Shift+F2 move workspace to output right
