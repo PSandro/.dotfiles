@@ -52,8 +52,8 @@ window#waybar.chromium {
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+    background-color: #16161d;
+    box-shadow: inset 0 -3px #f4f5f6;
 }
 
 #workspaces button.urgent {
@@ -61,8 +61,8 @@ window#waybar.chromium {
 }
 
 #mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+    background-color: #16161d;
+    border-bottom: 3px solid #f4f5f6;
 }
 
 #clock,
@@ -100,7 +100,7 @@ window#waybar.chromium {
 
 #custom-clock,
 #clock {
-    background-color: #64727D;
+    background-color: #16161d;
 }
 
 #battery {
@@ -144,7 +144,7 @@ label:focus {
 }
 
 #backlight {
-    background-color: #90b1b1;
+    background-color: #16161d;
 }
 
 #network {
