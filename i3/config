@@ -159,35 +159,15 @@ bindsym $mod+Shift+u resize shrink height 10 px or 10 ppt
 bindsym $mod+Shift+i resize grow height 10 px or 10 ppt
 bindsym $mod+Shift+o resize shrink width 10 px or 10 ppt
 
-# current colors
-set $accent-color        #00FF79
-set $bg-color 	         #434c5e
-set $inactive-bg-color   #3b4252
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #FF0000
+#
+# Styling
+#
 
-# window colors
-#                       border                  background              text                    indicator
-client.focused          $accent-color           $accent-color           $bg-color               #8fbcbb
-client.unfocused        $inactive-bg-color      $inactive-bg-color      $inactive-text-color    #8fbcbb
-client.focused_inactive $inactive-bg-color      $inactive-bg-color      $inactive-text-color    #8fbcbb
-client.urgent           $urgent-bg-color        $urgent-bg-color        $text-color             #8fbcbb
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#    bar {
-#            status_command i3blocks -c ~/.config/i3blocks.conf
-#            position top
-#            colors {
-#                background $inactive-bg-color
-#                separator #757575
-#                #                  border             background         text
-#                focused_workspace  $bg-color          $accent-color          $text-color
-#                inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-#                urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-#        }
-#    }
+#                       border  bg      text    indic    child
+client.focused          #9aa5ce #16161d #c0caf5 #f4f4f6  #9aa5ce
+client.focused_inactive #16161d #16161d #c0caf5 #16161d  #16161d
+client.unfocused        #16161d #16161d #c0caf5 #16161d  #16161d
+client.urgent           #FF0000 #16161d #c0caf5 #16161d  #9aa5ce
 
 # system mode
 set $Locker i3lock -c 4C5F93 && sleep 1
