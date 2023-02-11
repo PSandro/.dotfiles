@@ -72,6 +72,12 @@ ensure_line_in_file ~/.config/sway/config "include $DIR/sway/config"
 mkdir -p ~/.config/i3
 ensure_line_in_file ~/.config/i3/config "include $DIR/i3/config"
 
+# alacritty
+mkdir -p ~/.config/waybar
+if [[ ! -f ~/.config/alacritty/alacritty.yml ]];then
+ln -s "$DIR/alacritty/alacritty.yml" ~/.config/alacritty/alacritty.yml
+fi
+
 # waybar config
 mkdir -p ~/.config/waybar
 if [[ ! -f ~/.config/waybar/config ]];then
