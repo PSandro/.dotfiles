@@ -5,14 +5,14 @@ This is where my dotfiles are stored.
 
 ## setup
 
+```
+pacman -S toml-bombadil
+```
 
-Stuff that needs to be installed
-## sway
-```bash
-sway
-waybar
-grim
-slurp
-swaylock
-brightnessctl
+```
+cd && git clone git@github.com:PSandro/.dotfiles.git && bombadil install .dotfiles
+```
+
+```
+bombadil link -p [sway|i3]
 ```

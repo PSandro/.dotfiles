@@ -1,0 +1,27 @@
+dotfiles_dir = ".dotfiles"
+
+
+[settings]
+prehooks = ["git config --global include.path $HOME/.dotfiles/git/gitconfig"]
+
+[settings.dots]
+alacritty = { source = "alacritty", target = ".config/alacritty" }
+tmux = { source = "tmux", target = ".config/tmux" }
+nvim = { source = "nvim/init.lua", target = ".config/nvim/init.lua" }
+zsh = { source = "zsh/zshrc.zsh", target = ".zshrc" }
+
+[profiles.sway]
+posthooks = ["sway reload"]
+
+[profiles.sway.dots]
+sway = { source = "sway/wm", target = ".config/sway" }
+waybar = { source = "sway/waybar", target = ".config/waybar" }
+
+
+[profiles.i3]
+posthooks = ["i3-msg reload"]
+
+[profiles.i3.dots]
+i3 =  { source = "i3/wm", target = ".config/i3" }
+polybar =  { source = "i3/polybar", target = ".config/polybar" }
+
