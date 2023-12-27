@@ -14,7 +14,7 @@ set $right l
 # Terminal
 set $term alacritty
 # Browser
-set $browser chromium-browser
+set $browser chromium
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -34,7 +34,7 @@ bindsym $mod+Shift+F1 move workspace to output left
 bindsym $mod+Shift+F2 move workspace to output right
 
 #wayland mirror
-bindsym $mod+p exec wl-mirror -r '0,41 1920x1080 eDP-1'
+bindsym $mod+p exec wl-mirror -r '0,0 1920x1080 eDP-1'
 
 ### Idle configuration
 #
@@ -187,7 +187,7 @@ bindsym $mod+Shift+o resize shrink width 10 px or 10 ppt
 #
 # System Mode
 #
-set $Locker swaylock -f -c 666666
+set $Locker swaylock -f -c 16161d
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
   bindsym l exec --no-startup-id $Locker, mode "default"
@@ -209,7 +209,7 @@ bindsym $mod+Shift+x mode "$mode_system"
 # User Programs
 #
 bindsym $mod+w exec --no-startup-id $browser &
-bindsym $mod+m exec --no-startup-id nautilus &
+bindsym $mod+m exec --no-startup-id pcmanfm-qt &
 bindsym $mod+n exec --no-startup-id $term -e ranger &
 
 # Brightnes Control
@@ -248,3 +248,7 @@ bar {
 }
 
 include /etc/sway/config.d/*
+
+exec_always gammastep
+
+exec_always mako

@@ -6,7 +6,8 @@ alias ls="exa"
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
 alias ip="ip -c"
-alias cat="bat"
+alias vim="nvim"
+# alias cat="bat"
 
 # Set FSH THEME_NAME
 #export FAST_THEME_NAME="clean"
