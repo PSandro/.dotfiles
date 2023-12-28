@@ -5,10 +5,6 @@ DOTFILES_HOME="$HOME/.dotfiles"
 setopt inc_append_history # To save every command before it is executed
 setopt share_history # setopt inc_append_history
 
-source $DOTFILES_HOME/zsh/window.zsh
-source $DOTFILES_HOME/zsh/config.zsh
-source $DOTFILES_HOME/zsh/prompt.zsh
-
 ### WINDOW
 function title() {
   # escape '%' chars in $1, make nonprintables visible
@@ -70,28 +66,15 @@ function man() {
 ### PROMPT
 autoload -U colors && colors
 
-BLACK=59;
 RED=166;
 GREEN=72;
 YELLOW=186;
 BLUE=24;
 PURPLE=168;
-LIGHT_BLUE=38;
-GREY=230;
 
-set_prompt () {
-  PS1="%B%{%F{$RED}%}[%{%F{$YELLOW}%}%n%{%F{$GREEN}%}@%{%F{$BLUE}%}%M %{%F{$PURPLE}%}%~%{%F{$RED}%}]%{$reset_color%}$%b "
-}
+PROMPT="%B%F{$RED}[%f%F{$YELLOW}%n%f%F{$GREEN}@%f%F{$BLUE}%m%f %F{$PURPLE}%~%f%F{$RED}]%f%b$ "
+RPROMPT="%F{$BLUE}%?%f"
 
-
-git_branch() {
-  echo $($git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
-}
-
-precmd () {
-  title "zsh" "%m" "%55<...<%~"
-  set_prompt
-}
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
