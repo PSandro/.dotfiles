@@ -10,7 +10,7 @@
 
 set $mod Mod4
 set $term alacritty
-set $browser chromium
+set $browser firefox
 
 # set keyboard layout to german
 exec "setxkbmap -layout us -variant de_se_fi"
@@ -140,7 +140,7 @@ force_display_urgency_hint 1000 ms
 bindsym $mod+d exec --no-startup-id dmenu_run
 #bindsym $mod+d exec --no-startup-id rofi -theme ~/.dotfiles/rofi/nord -show run
 bindsym $mod+w exec --no-startup-id $browser &
-bindsym $mod+m exec --no-startup-id pcmanfm & 
+bindsym $mod+m exec --no-startup-id pcmanfm-qt & 
 bindsym $mod+r exec --no-startup-id $term -e ranger & 
 
 # reload the configuration file
