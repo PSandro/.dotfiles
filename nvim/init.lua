@@ -138,6 +138,7 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+require'lspconfig'.rust_analyzer.setup({})
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
