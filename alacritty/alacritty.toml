@@ -27,11 +27,11 @@ white = "0xa9b1d6"
 yellow = "0xe0af68"
 
 [colors.primary]
-background = "0x1a1b26"
+background = "0x000000"
 foreground = "0xc0caf5"
 
 [font]
-size = 10
+size = 8
 
 [font.bold]
 family = "FiraCode Nerd Font Mono"
