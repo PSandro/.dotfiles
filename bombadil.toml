@@ -16,6 +16,7 @@ posthooks = ["sway reload"]
 [profiles.sway.dots]
 sway = { source = "sway/wm", target = ".config/sway" }
 waybar = { source = "sway/waybar", target = ".config/waybar" }
+mako = { source = "sway/mako", target = ".config/mako" }
 
 
 [profiles.i3]
