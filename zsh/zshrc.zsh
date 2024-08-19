@@ -26,11 +26,12 @@ export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
 # Colorize when possible
-alias ls="exa"
+alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
 alias ip="ip -c"
 alias vim="nvim"
+
 # alias cat="bat"
 
 # Set FSH THEME_NAME
@@ -131,4 +132,3 @@ zinit wait lucid light-mode for \
 
 export PATH=$PATH:$DOTFILES_HOME/util
 export PATH=$PATH:$HOME/.local/bin
-
