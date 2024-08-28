@@ -57,6 +57,7 @@ set.splitbelow = true
 set.splitright = true
 set.syntax = 'on'
 set.termguicolors = true
+set.wrap = false
 
 -- colors & ui
 require('lualine').setup {
