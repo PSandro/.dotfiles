@@ -132,7 +132,7 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-local servers = { 'clangd', 'tsserver', 'pylsp', 'texlab', 'jdtls', 'gopls'}
+local servers = { 'clangd', 'ts_ls', 'pylsp', 'texlab', 'jdtls', 'gopls'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
@@ -140,6 +140,12 @@ for _, lsp in ipairs(servers) do
   }
 end
 require'lspconfig'.rust_analyzer.setup({})
+require'lspconfig'.typst_lsp.setup{
+	settings = {
+		exportPdf = "onType" -- Choose onType, onSave or never.
+        -- serverPath = "" -- Normally, there is no need to uncomment it.
+	}
+}
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
