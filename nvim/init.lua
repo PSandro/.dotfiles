@@ -132,7 +132,7 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-local servers = { 'clangd', 'ts_ls', 'pylsp', 'texlab', 'jdtls', 'gopls'}
+local servers = { 'clangd', 'pylsp', 'texlab', 'jdtls', 'gopls'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,

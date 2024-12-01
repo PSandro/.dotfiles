@@ -9,6 +9,7 @@ alacritty = { source = "alacritty", target = ".config/alacritty" }
 tmux = { source = "tmux", target = ".config/tmux" }
 nvim = { source = "nvim/init.lua", target = ".config/nvim/init.lua" }
 zsh = { source = "zsh/zshrc.zsh", target = ".zshrc" }
+imv = { source = "imv", target = ".config/imv" }
 
 [profiles.sway]
 posthooks = ["sway reload"]
