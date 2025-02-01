@@ -73,7 +73,7 @@ YELLOW=186;
 BLUE=24;
 PURPLE=168;
 
-PROMPT="%B%F{$RED}[%f%F{$YELLOW}%n%f%F{$GREEN}@%f%F{$BLUE}%m%f %F{$PURPLE}%~%f%F{$RED}]%f%b$ "
+PROMPT="%B%F{$RED}[%f%F{$YELLOW}%n%f%F{$GREEN}@%f%F{$BLUE}%m%f %F{$PURPLE}%2~%f%F{$RED}]%f%b$ "
 RPROMPT="%F{$BLUE}%?%f"
 
 
