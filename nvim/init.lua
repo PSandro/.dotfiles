@@ -22,6 +22,7 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp'
   use 'dcampos/nvim-snippy'
   use 'dcampos/cmp-snippy'
+  use 'let-def/texpresso.vim'
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -132,7 +133,7 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-local servers = { 'clangd', 'pylsp', 'texlab', 'jdtls', 'gopls'}
+local servers = { 'clangd', 'pylsp', 'texlab', 'jdtls', 'gopls', 'bashls'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
@@ -140,12 +141,6 @@ for _, lsp in ipairs(servers) do
   }
 end
 require'lspconfig'.rust_analyzer.setup({})
-require'lspconfig'.typst_lsp.setup{
-	settings = {
-		exportPdf = "onType" -- Choose onType, onSave or never.
-        -- serverPath = "" -- Normally, there is no need to uncomment it.
-	}
-}
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
