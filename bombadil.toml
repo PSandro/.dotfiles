@@ -7,7 +7,7 @@ prehooks = ["git config --global include.path $HOME/.dotfiles/git/gitconfig"]
 [settings.dots]
 alacritty = { source = "alacritty", target = ".config/alacritty" }
 tmux = { source = "tmux", target = ".config/tmux" }
-nvim = { source = "nvim/init.lua", target = ".config/nvim/init.lua" }
+nvim = { source = "nvim", target = ".config/nvim" }
 zsh = { source = "zsh/zshrc.zsh", target = ".zshrc" }
 imv = { source = "imv", target = ".config/imv" }
 
