@@ -1,54 +1,41 @@
-# Vars
 HISTFILE=~/.zsh_history
-SAVEHIST=1000
+HISTSIZE=50000
+SAVEHIST=50000
 DOTFILES_HOME="$HOME/.dotfiles"
-setopt inc_append_history # To save every command before it is executed
-setopt share_history # setopt inc_append_history
 
-### WINDOW
-function title() {
-  # escape '%' chars in $1, make nonprintables visible
-  a=${(V)1//\%/\%\%}
-  # Truncate command, and join lines.
-  a=$(print -Pn "%40>...>$a" | tr -d "\n")
-  case $TERM in
-  screen)
-    print -Pn "\ek$a:$3\e\\" # screen title (in ^A")
-    ;;
-  xterm*|rxvt)
-    print -Pn "\e]2;$2\a" # plain xterm title ($3 for pwd)
-    ;;
-  esac
-}
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt AUTO_CD
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+setopt CORRECT
+setopt GLOB_DOTS
 
-### CONFIG
-export LSCOLORS="exfxcxdxbxegedabagacad"
-export CLICOLOR=true
-
-# Colorize when possible
 alias ls="ls --color=auto"
+alias ll="ls -lAh --color=auto"
+alias la="ls -A --color=auto"
+alias l="ls -CF --color=auto"
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
 alias ip="ip -c"
 alias vim="nvim"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias md="mkdir -p"
+alias rd="rmdir"
 
-# alias cat="bat"
-
-# Set FSH THEME_NAME
-#export FAST_THEME_NAME="clean"
-
-# vi mode
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 export KEYTIMEOUT=1
-
-# Use vim keys in tab complete menu:
-#bindkey -M menuselect 'j' vi-backward-char
-#bindkey -M menuselect 'l' vi-up-line-or-history
-#bindkey -M menuselect 'ö' vi-forward-char
-#bindkey -M menuselect 'k' vi-down-line-or-history
-#bindkey -v '^?' backward-delete-char
-
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 
@@ -89,28 +76,10 @@ fi
 
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 
-### SSH-Agent
-# if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-#     ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
-# fi
-# if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
-#     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-# fi
-#
-# The above is slow, use the plugin instead
+zinit snippet OMZP::ssh-agent
 
-
-zinit ice wait'!0' lucid
-zinit light bobsoppe/zsh-ssh-agent
-
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
-zinit wait lucid light-mode for \
-    zdharma-continuum/zinit-annex-as-monitor \
-    zdharma-continuum/zinit-annex-bin-gem-node \
-    zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-rust
-
+zinit ice lucid wait
+zinit light junegunn/fzf
 
 ### End of Zinit's installer chunk
 # matches case insensitive for lowercase
@@ -119,9 +88,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # pasting with tabs doesn't perform completion
 zstyle ':completion:*' insert-tab pending
 
-autoload -U compinit
 zmodload zsh/complist
-compinit
 
 zinit wait lucid light-mode for \
   atinit"zicompinit; zicdreplay" \
@@ -131,5 +98,4 @@ zinit wait lucid light-mode for \
 
 
 
-export PATH=$PATH:$DOTFILES_HOME/util
 export PATH=$PATH:$HOME/.local/bin
