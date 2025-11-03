@@ -238,6 +238,11 @@ client.unfocused        #16161d #16161d #c0caf5 #16161d  #16161d
 client.urgent           #f7768e #16161d #c0caf5 #16161d  #9aa5ce
 
 #
+# Window Rules
+#
+for_window [class="Pinentry-gtk"] floating enable, sticky enable, resize set 500 200
+
+#
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
