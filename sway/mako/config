@@ -1,4 +1,7 @@
 font=FiraCode Nerd Font Mono 10
-background-color=#1a1b26
-default-timeout=1500
+background-color=#16161d
+text-color=#c0caf5
+border-color=#9aa5ce
+border-size=2
+default-timeout=5000
 ignore-timeout=1

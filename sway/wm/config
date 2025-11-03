@@ -34,21 +34,12 @@ input 10429:63491:XP-Pen_Deco_02 map_to_output eDP-1
 bindsym $mod+Shift+F1 move workspace to output left
 bindsym $mod+Shift+F2 move workspace to output right
 
-#wayland mirror
-bindsym $mod+p exec wl-mirror -r '0,0 1920x1080 eDP-1'
-
 ### Idle configuration
-#
-# Example configuration:
-#
-#exec swayidle -w \
-#         timeout 300 'swaylock -f -c 000000' \
-#         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#         before-sleep 'swaylock -f -c 000000'
 
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 16161d' \
+         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -c 16161d'
 
 ### Input configuration
 #
@@ -216,9 +207,9 @@ bindsym $mod+Shift+x mode "$mode_system"
 #
 # User Programs
 #
-bindsym $mod+w exec --no-startup-id $browser &
-bindsym $mod+m exec --no-startup-id pcmanfm-qt &
-bindsym $mod+n exec --no-startup-id $term -e ranger &
+bindsym $mod+w exec --no-startup-id $browser
+bindsym $mod+m exec --no-startup-id pcmanfm-qt
+bindsym $mod+n exec --no-startup-id $term -e ranger
 
 # Brightnes Control
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
@@ -244,7 +235,7 @@ seat * hide_cursor 8000
 client.focused          #9aa5ce #16161d #c0caf5 #f4f4f6  #9aa5ce
 client.focused_inactive #16161d #16161d #c0caf5 #16161d  #16161d
 client.unfocused        #16161d #16161d #c0caf5 #16161d  #16161d
-client.urgent           #FF0000 #16161d #c0caf5 #16161d  #9aa5ce
+client.urgent           #f7768e #16161d #c0caf5 #16161d  #9aa5ce
 
 #
 # Status Bar:
@@ -255,10 +246,7 @@ bar {
     bar swaybar_command waybar
 }
 
-include /etc/sway/config.d/*
-
 exec_always gammastep
 
 exec_always mako
 
-exec --no-startup-id echo "performance" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
