@@ -3,18 +3,14 @@ dotfiles_dir = ".dotfiles"
 
 [settings]
 prehooks = ["git config --global include.path $HOME/.dotfiles/git/gitconfig"]
+vars = ["vars.toml.default", "vars.toml"]
 
 [settings.dots]
 tmux = { source = "tmux", target = ".config/tmux" }
 nvim = { source = "nvim", target = ".config/nvim" }
 zsh = { source = "zsh/zshrc.zsh", target = ".zshrc" }
 imv = { source = "imv", target = ".config/imv" }
-
-[profiles.desktop.dots]
-alacritty = { source = "alacritty/alacritty-desktop.toml", target = ".config/alacritty/alacritty.toml" }
-
-[profiles.laptop.dots]
-alacritty = { source = "alacritty/alacritty-laptop.toml", target = ".config/alacritty/alacritty.toml" }
+alacritty = { source = "alacritty/alacritty.toml", target = ".config/alacritty/alacritty.toml" }
 
 [profiles.sway]
 posthooks = ["sway reload"]
@@ -23,7 +19,6 @@ posthooks = ["sway reload"]
 sway = { source = "sway/wm", target = ".config/sway" }
 waybar = { source = "sway/waybar", target = ".config/waybar" }
 mako = { source = "sway/mako", target = ".config/mako" }
-
 
 [profiles.i3]
 posthooks = ["i3-msg reload"]

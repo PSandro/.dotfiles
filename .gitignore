@@ -1,3 +1,4 @@
 nvim/autoload
 zsh/plugins
 .dots
+/vars.toml
