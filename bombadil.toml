@@ -5,11 +5,16 @@ dotfiles_dir = ".dotfiles"
 prehooks = ["git config --global include.path $HOME/.dotfiles/git/gitconfig"]
 
 [settings.dots]
-alacritty = { source = "alacritty", target = ".config/alacritty" }
 tmux = { source = "tmux", target = ".config/tmux" }
 nvim = { source = "nvim", target = ".config/nvim" }
 zsh = { source = "zsh/zshrc.zsh", target = ".zshrc" }
 imv = { source = "imv", target = ".config/imv" }
+
+[profiles.desktop.dots]
+alacritty = { source = "alacritty/alacritty-desktop.toml", target = ".config/alacritty/alacritty.toml" }
+
+[profiles.laptop.dots]
+alacritty = { source = "alacritty/alacritty-laptop.toml", target = ".config/alacritty/alacritty.toml" }
 
 [profiles.sway]
 posthooks = ["sway reload"]
