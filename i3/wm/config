@@ -26,6 +26,11 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+
+{% if i3.screenlayout_sh_path %}
+exec --no-startup-id {{i3.screenlayout_sh_path}}
+{% endif %}
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 

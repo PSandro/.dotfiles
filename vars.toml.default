@@ -1,2 +1,5 @@
 [alacritty]
 font_size = 12
+
+[i3]
+screenlayout_sh_path = "/home/sandro/.screenlayout/default.sh"
