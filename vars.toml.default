@@ -1,3 +1,4 @@
+browser = "firefox"
 [alacritty]
 font_size = 12
 

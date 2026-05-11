@@ -10,7 +10,7 @@
 
 set $mod Mod4
 set $term alacritty
-set $browser firefox
+set $browser {{ browser }}
 
 # set keyboard layout to german
 exec "setxkbmap -layout us -variant de_se_fi"
